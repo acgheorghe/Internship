@@ -1,0 +1,110 @@
+Comenzi Linux din training videos:
+
+1. ls
+Listeaza toate componentele directorului curent
+(Argumente: -l afiseaza un format lung;
+-a afiseaza toate fisierele inclusiv cele ascunse si directoarele
+-i afiseaza si inodul
+-t afisare in ordine cronologica)
+
+2. pwd
+Prind Working Directory => returneaza calea spre directorul curent
+
+3. cd
+Change Directory - schimba directorul curent.
+(Argumente: / pt root directory,
+.. pt directorul cu un nivel mai "sus",
+/director1/director2 pt un anumit director,
+etc. )
+
+4. su
+Switch User - schimba userul (default cu root)
+! E nevoie de logarea ca root prin "su" pt a putea intra in directorul root (cd root).
+
+5. sudo
+Super User Do - pt a rula comenzi ca root
+
+6. dmesg
+Merge doar cu sudo. Returneaza informatii despre hardware, initializarea driverelor si mesaje de la
+kernel modules din timpul pornirii de sistem
+
+7. lsusb
+Returneaza informatii despre USB buses ale sistemului si despre ce dispozitive sunt conectate la
+ele.
+
+Nu e comanda, dar quite interesting: in /etc/systemd/system se gasesc serviciile care
+ruleaza/pot rula pe sistemul de operare
+
+8. cat
+Concatenate - Citeste datele dintr-un fisier si le afiseaza pe ecran, e utila pt a
+crea/vedea/concatena fisiere.
+
+9. rm
+rm -rf
+Remove - comanda pt a sterge fisiere si directoare
+Argumente:
+-f    adica force, sterge fara a cere confirmare
+-r    adica recursive, sterge totul intr-o maniera recursiva (adica sterge si subdirectoarele
+si fisierele din director)
+
+10. mkdir
+Make directory - creeaza un director nou
+
+11. sudo apt install
+(Nu era in tutorial dar a fost nevoie pt a instala editorul text vim)
+Comanda pt instalarea de pachete software
+
+12. vim ceva.txt
+Editarea unui fisier specificat cu editorul vim
+Se apasa tasta i pt insert (adica modul de editare)
+Apoi esc pt a iesi din acest mod.
+Pt salvare :wq
+
+Adica write si quit
+
+13. chown new_owner nume_fisier
+Change Owner - NEAPARAT cu sudo
+Schimba ownerul unui fisier
+
+14. chmod
+Tot cu sudo, schimba modul fisierelor (read write execute)
+De ex: sudo chmod -r ceva.txt -revoca dreptul de read al fisierului ceva.txt
+sudo chmod +x print.sh -adauga dreptul de execute (apoi pt a rula ./print.sh)
+
+15. man
+Se foloseste cu o comanda (ex: man ls) si vedem "manualul de utilizare" al comenzii.
+
+16. crontab -e
+Cron Table - comanda care e folosita pt a accesa un cron table. Cron table = lista de comenzi care
+vor fi rulate la un anumit moment specificat (scheduling tasks)
+
+(Logurile de la cron table se pot gasi in /var/log/cron )
+
+17. ifconfig
+Fara argumente, comanda afiseaza statusul interfetelor active la momentul curent (cu -a afiseaza
+inclusiv interfetele care sunt down; cu -s se afiseaza un rezumat; cu -v se afiseaza informatii
+detaliate => bun pt debugging).
+Cu argumente: ifconfig interfata optiuni | adresa ...
+E folosita pt a configura o interfata de retea
+
+18. ip link show
+Afisaeaza detalii despre interfetele de retea (pachete trimise, nr biti trimisi)
+
+19. ps aux
+Afiseaza toate procesele care ruleaza la momentul actual.
+
+20. top
+Deschide o un "panou" interactiv impartit in 2: partea de sus o sa arate statistici despre resursele
+utilizate si partea de jos va contine o lista cu procesele care ruleaza la momentul curent.
+
+Se iese cu q sau ctrl c
+
+21. kill -9 PID
+unde PID este process id-ul al procesului pe care vrem sa il oprim
+
+22. grep
+Cauta un anumit regular expression sau un sir de caractere intr-un fisier text.
+
+
+
+
