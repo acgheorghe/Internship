@@ -22,3 +22,90 @@ cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
 cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod g-x output.txt
 cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
 -rwxrw-r-- 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+
+
+Pt a lista toti userii, a verificat fisierul /etc/passwd
+cristinagheorghe@Ubuntu22:~/Desktop$ awk -F: '{print $1}' /etc/passwd
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+systemd-network
+systemd-resolve
+messagebus
+systemd-timesync
+syslog
+_apt
+tss
+uuidd
+systemd-oom
+tcpdump
+avahi-autoipd
+usbmux
+dnsmasq
+kernoops
+avahi
+cups-pk-helper
+rtkit
+whoopsie
+sssd
+speech-dispatcher
+fwupd-refresh
+nm-openvpn
+saned
+colord
+geoclue
+pulse
+gnome-initial-setup
+hplip
+gdm
+cristina
+vboxadd
+cristinagheorghe
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chown cristina output2.txt
+[sudo] password for cristinagheorghe:
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al | grep output
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe      0 nov 29 11:14 output1.txt
+-rw-rw-r--  1 cristina         cristinagheorghe     13 nov 29 11:12 output2.txt
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe     14 nov 29 11:10 output.txt
+
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod u-w output2.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al | grep output
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe      0 nov 29 11:14 output1.txt
+-r--rw-r--  1 cristina         cristinagheorghe     13 nov 29 11:12 output2.txt
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe     14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ su cristina
+Password:
+cristina@Ubuntu22:/home/cristinagheorghe/Desktop$ whoami
+cristina
+cristina@Ubuntu22:/home/cristinagheorghe/Desktop$ cat output2.txt
+Hello world!
+cristina@Ubuntu22:/home/cristinagheorghe/Desktop$ nano output2.txt
+  GNU nano 6.2                                                        output2.txt *
+Hello world!
+addaf
+
+
+
+                                                 [ Error writing output2.txt: Permission denied ]
+^G Help         ^O Write Out    ^W Where Is     ^K Cut          ^T Execute      ^C Location     M-U Undo        M-A Set Mark    M-] To Bracket
+^X Exit         ^R Read File    ^\ Replace      ^U Paste        ^J Justify      ^/ Go To Line   M-E Redo        M-6 Copy        ^Q Where Was
+
+
+

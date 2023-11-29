@@ -1,3 +1,8 @@
+cristinagheorghe@Ubuntu22:~/Desktop$ ps
+    PID TTY          TIME CMD
+   9333 pts/1    00:00:00 bash
+  11085 pts/1    00:00:00 ps
+
 cristinagheorghe@Ubuntu22:~/Desktop$ ps aux
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root           1  0.0  0.1 167916 12732 ?        Ss   08:50   0:01 /sbin/init sp
@@ -858,3 +863,329 @@ MiB Swap:   2048,0 total,   2044,0 free,      4,0 used.   1857,6 avail Mem
       8 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 kworker/0:0H-events_highpri
      10 root       0 -20       0      0      0 I   0,0   0,0   0:00.00 mm_percpu_wq
      11 root      20   0       0      0      0 I   0,0   0,0   0:00.00 rcu_tasks_kthread
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ps -u cristinagheorghe | grep "firefox"
+   3031 ?        00:12:26 firefox
+
+cristinagheorghe@Ubuntu22:~/Desktop$ pgrep firefox
+3031
+cristinagheorghe@Ubuntu22:~/Desktop$ kill 3031
+cristinagheorghe@Ubuntu22:~/Desktop$ pgrep firefox
+cristinagheorghe@Ubuntu22:~/Desktop$ ps -aux | grep firefox
+cristin+   11165  0.0  0.0  12432  2688 pts/1    S+   12:28   0:00 grep --color=auto firefox
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ping -c 1000 google.com
+PING google.com (142.250.74.206) 56(84) bytes of data.
+64 bytes from fra24s02-in-f14.1e100.net (142.250.74.206): icmp_seq=1 ttl=116 time=46.6 ms
+64 bytes from fra24s02-in-f14.1e100.net (142.250.74.206): icmp_seq=2 ttl=116 time=36.1 ms
+64 bytes from fra24s02-in-f14.1e100.net (142.250.74.206): icmp_seq=3 ttl=116 time=33.0 ms
+64 bytes from fra24s02-in-f14.1e100.net (142.250.74.206): icmp_seq=4 ttl=116 time=33.3 ms
+^Z
+[1]+  Stopped                 ping -c 1000 google.com
+cristinagheorghe@Ubuntu22:~/Desktop$ jobs
+[1]+  Stopped                 ping -c 1000 google.com
+cristinagheorghe@Ubuntu22:~/Desktop$ sleep 100
+^Z
+[2]+  Stopped                 sleep 100
+cristinagheorghe@Ubuntu22:~/Desktop$ jobs
+[1]-  Stopped                 ping -c 1000 google.com
+[2]+  Stopped                 sleep 100
+cristinagheorghe@Ubuntu22:~/Desktop$ ps -ax
+    PID TTY      STAT   TIME COMMAND
+      1 ?        Ss     0:01 /sbin/init splash
+      2 ?        S      0:00 [kthreadd]
+      3 ?        I<     0:00 [rcu_gp]
+      4 ?        I<     0:00 [rcu_par_gp]
+      5 ?        I<     0:00 [slub_flushwq]
+      6 ?        I<     0:00 [netns]
+      8 ?        I<     0:00 [kworker/0:0H-events_highpri]
+     10 ?        I<     0:00 [mm_percpu_wq]
+     11 ?        I      0:00 [rcu_tasks_kthread]
+     12 ?        I      0:00 [rcu_tasks_rude_kthread]
+     13 ?        I      0:00 [rcu_tasks_trace_kthread]
+     14 ?        S      0:00 [ksoftirqd/0]
+     15 ?        R      0:04 [rcu_preempt]
+     16 ?        S      0:00 [migration/0]
+     17 ?        S      0:00 [idle_inject/0]
+     19 ?        S      0:00 [cpuhp/0]
+     20 ?        S      0:00 [cpuhp/1]
+     21 ?        S      0:00 [idle_inject/1]
+     22 ?        S      0:00 [migration/1]
+     23 ?        S      0:00 [ksoftirqd/1]
+     25 ?        I<     0:00 [kworker/1:0H-events_highpri]
+     26 ?        S      0:00 [cpuhp/2]
+     27 ?        S      0:00 [idle_inject/2]
+     28 ?        S      0:00 [migration/2]
+     29 ?        S      0:00 [ksoftirqd/2]
+     31 ?        I<     0:00 [kworker/2:0H-events_highpri]
+     32 ?        S      0:00 [cpuhp/3]
+     33 ?        S      0:00 [idle_inject/3]
+     34 ?        S      0:00 [migration/3]
+     35 ?        S      0:00 [ksoftirqd/3]
+     38 ?        S      0:00 [kdevtmpfs]
+     39 ?        I<     0:00 [inet_frag_wq]
+     40 ?        S      0:00 [kauditd]
+     41 ?        S      0:00 [khungtaskd]
+     43 ?        S      0:00 [oom_reaper]
+     44 ?        I<     0:00 [writeback]
+     46 ?        S      0:00 [kcompactd0]
+     47 ?        SN     0:00 [ksmd]
+     48 ?        SN     0:00 [khugepaged]
+     49 ?        I<     0:00 [kintegrityd]
+     50 ?        I<     0:00 [kblockd]
+     51 ?        I<     0:00 [blkcg_punt_bio]
+     52 ?        I<     0:00 [tpm_dev_wq]
+     53 ?        I<     0:00 [ata_sff]
+     54 ?        I<     0:00 [md]
+     55 ?        I<     0:00 [edac-poller]
+     56 ?        I<     0:00 [devfreq_wq]
+     57 ?        S      0:00 [watchdogd]
+     59 ?        I<     0:00 [kworker/3:1H-kblockd]
+     60 ?        S      0:00 [kswapd0]
+     61 ?        S      0:00 [ecryptfs-kthread]
+     62 ?        I<     0:00 [kthrotld]
+     63 ?        I<     0:00 [acpi_thermal_pm]
+     64 ?        S      0:00 [scsi_eh_0]
+     65 ?        I<     0:00 [scsi_tmf_0]
+     66 ?        S      0:00 [scsi_eh_1]
+     67 ?        I<     0:00 [scsi_tmf_1]
+     72 ?        I<     0:00 [mld]
+     73 ?        I<     0:00 [ipv6_addrconf]
+     82 ?        I<     0:00 [kstrp]
+     84 ?        I<     0:00 [zswap-shrink]
+     85 ?        I<     0:00 [kworker/u9:0]
+     89 ?        I<     0:00 [charger_manager]
+    109 ?        I<     0:00 [kworker/2:1H-kblockd]
+    112 ?        I<     0:00 [kworker/0:1H-kblockd]
+    113 ?        I<     0:00 [kworker/1:1H-kblockd]
+    141 ?        S      0:00 [scsi_eh_2]
+    142 ?        I<     0:00 [scsi_tmf_2]
+    167 ?        S      0:00 [jbd2/sda3-8]
+    168 ?        I<     0:00 [ext4-rsv-conver]
+    207 ?        S<s    0:00 /lib/systemd/systemd-journald
+    239 ?        S      0:00 [irq/18-vmwgfx]
+    258 ?        Ss     0:00 /lib/systemd/systemd-udevd
+    288 ?        I<     0:00 [iprt-VBoxWQueue]
+    300 ?        I<     0:00 [cryptd]
+    317 ?        I<     0:00 [kworker/3:2H-kblockd]
+    448 ?        Ss     0:08 /lib/systemd/systemd-oomd
+    474 ?        Ss     0:03 /lib/systemd/systemd-resolved
+    592 ?        Ssl    0:00 /usr/libexec/accounts-daemon
+    593 ?        Ss     0:00 /usr/sbin/acpid
+    596 ?        Ss     0:00 avahi-daemon: running [Ubuntu22.local]
+    597 ?        Ss     0:00 /usr/sbin/cron -f -P
+    598 ?        Ss     0:01 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+    600 ?        Ssl    0:00 /usr/sbin/NetworkManager --no-daemon
+    607 ?        Ssl    0:00 /usr/sbin/irqbalance --foreground
+    608 ?        Ss     0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+    614 ?        Ssl    0:00 /usr/libexec/polkitd --no-debug
+    615 ?        Ssl    0:00 /usr/libexec/power-profiles-daemon
+    617 ?        Ssl    0:00 /usr/sbin/rsyslogd -n -iNONE
+    626 ?        Ssl    0:01 /usr/lib/snapd/snapd
+    628 ?        Ssl    0:00 /usr/libexec/switcheroo-control
+    632 ?        Ss     0:00 /lib/systemd/systemd-logind
+    636 ?        Ssl    0:00 /usr/libexec/udisks2/udisksd
+    638 ?        Ss     0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+    646 ?        S      0:00 avahi-daemon: chroot helper
+    694 ?        Ssl    0:00 /usr/sbin/ModemManager
+    720 ?        Ssl    0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+    729 ?        Ss     0:00 /usr/sbin/cupsd -l
+   1005 ?        Sl     0:03 /usr/bin/VBoxDRMClient
+   1007 ?        Sl     0:01 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
+   1025 ?        Ssl    0:00 /usr/sbin/gdm3
+   1059 ?        Sl     0:00 gdm-session-worker [pam/gdm-autologin]
+   1077 ?        Ss     0:00 /lib/systemd/systemd --user
+   1078 ?        S      0:00 (sd-pam)
+   1106 ?        S<sl   0:00 /usr/bin/pipewire
+   1107 ?        Ssl    0:00 /usr/bin/pipewire-media-session
+   1108 ?        S<sl   0:22 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+   1109 ?        Ss     0:00 /snap/snapd-desktop-integration/83/usr/bin/snapd-desktop-integration
+   1111 ?        Ssl    0:00 /usr/bin/ubuntu-report service
+   1128 ?        SNsl   0:00 /usr/libexec/rtkit-daemon
+   1130 ?        SLl    0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+   1137 tty2     Ssl+   0:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+   1141 ?        Ss     0:01 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+   1154 tty2     Sl+    0:00 /usr/libexec/gnome-session-binary --session=ubuntu
+   1185 ?        Ssl    0:00 /usr/libexec/gvfsd
+   1198 ?        Sl     0:00 /usr/libexec/gvfsd-fuse /run/user/1001/gvfs -f
+   1210 ?        Ssl    0:00 /usr/libexec/gnome-session-ctl --monitor
+   1223 ?        Ssl    0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+   1237 ?        Sl     0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+   1243 ?        S      0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --addres
+   1247 ?        Ssl   24:26 /usr/bin/gnome-shell
+   1259 ?        Ssl    0:00 /usr/libexec/xdg-document-portal
+   1262 ?        Ssl    0:00 /usr/libexec/xdg-permission-store
+   1268 ?        Ss     0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1001/doc
+   1357 ?        Ssl    0:00 /usr/sbin/cups-browsed
+   1383 ?        Ss     0:00 /usr/sbin/kerneloops --test
+   1385 ?        Ss     0:00 /usr/sbin/kerneloops
+   1410 ?        Sl     0:00 /snap/snapd-desktop-integration/83/usr/bin/snapd-desktop-integration
+   1414 ?        Ssl    0:00 /usr/libexec/xdg-desktop-portal
+   1416 ?        Sl     0:00 /usr/libexec/gnome-shell-calendar-server
+   1420 ?        Ssl    0:00 /usr/libexec/xdg-desktop-portal-gnome
+   1426 ?        Ssl    0:00 /usr/libexec/evolution-source-registry
+   1428 ?        Ssl    0:00 /usr/libexec/upowerd
+   1441 ?        Sl     0:00 /usr/libexec/goa-daemon
+   1443 ?        Ssl    0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+   1448 ?        Ssl    0:00 /usr/libexec/evolution-calendar-factory
+   1454 ?        Ssl    0:00 /usr/libexec/gvfs-goa-volume-monitor
+   1465 ?        Sl     0:00 /usr/libexec/goa-identity-service
+   1467 ?        Ssl    0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+   1477 ?        Ssl    0:00 /usr/libexec/dconf-service
+   1486 ?        Ssl    0:00 /usr/libexec/evolution-addressbook-factory
+   1487 ?        Ssl    0:00 /usr/libexec/gvfs-afc-volume-monitor
+   1494 ?        Ssl    0:00 /usr/libexec/gvfs-mtp-volume-monitor
+   1506 ?        Ssl    0:05 /usr/libexec/packagekitd
+   1513 ?        Sl     0:00 /usr/libexec/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+   1524 ?        Sl     0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+   1527 ?        Sl     0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+   1539 ?        Ss     0:00 sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+   1540 ?        Ssl    0:00 /usr/libexec/gsd-a11y-settings
+   1541 ?        Ssl    0:00 /usr/libexec/gsd-color
+   1543 ?        Ssl    0:00 /usr/libexec/gsd-datetime
+   1546 ?        Sl     0:07 /usr/bin/ibus-daemon --panel disable
+   1547 ?        Ssl    0:00 /usr/libexec/gsd-housekeeping
+   1548 ?        Ssl    0:00 /usr/libexec/gsd-keyboard
+   1549 ?        Ssl    0:00 /usr/libexec/gsd-media-keys
+   1550 ?        Ssl    0:00 /usr/libexec/gsd-power
+   1552 ?        Ssl    0:00 /usr/libexec/gsd-print-notifications
+   1559 ?        Ssl    0:00 /usr/libexec/gsd-rfkill
+   1563 ?        Ssl    0:00 /usr/libexec/gsd-screensaver-proxy
+   1564 ?        Ssl    0:00 /usr/libexec/gsd-sharing
+   1575 ?        Ssl    0:00 /usr/libexec/gsd-smartcard
+   1579 ?        Ssl    0:00 /usr/libexec/gsd-sound
+   1582 ?        Sl     0:00 /usr/libexec/gsd-disk-utility-notify
+   1584 ?        Ssl    0:00 /usr/libexec/gsd-wacom
+   1628 ?        Sl     0:00 /usr/libexec/ibus-dconf
+   1629 ?        Sl     0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+   1630 ?        Sl     0:01 /usr/libexec/ibus-extension-gtk3
+   1639 ?        Sl     0:00 /usr/libexec/ibus-portal
+   1702 ?        S      0:00 /usr/bin/VBoxClient --clipboard
+   1704 ?        Sl     0:00 /usr/bin/VBoxClient --clipboard
+   1708 ?        Sl     0:03 /snap/snap-store/959/usr/bin/snap-store --gapplication-service
+   1723 ?        S      3:17 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1001/.mutter-Xwaylandauth.X12GF2 -listen 4 -lis
+   1742 ?        Sl     0:02 /usr/libexec/ibus-engine-simple
+   1747 ?        Sl     0:00 /usr/libexec/gsd-printer
+   1819 ?        Ssl    0:00 /usr/libexec/xdg-desktop-portal-gtk
+   1836 ?        Ssl    0:00 /usr/libexec/colord
+   1841 ?        SNsl   0:03 /usr/libexec/tracker-miner-fs-3
+   1877 ?        Ssl    0:00 /usr/libexec/gsd-xsettings
+   1882 ?        Sl     0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+   1931 ?        Sl     0:02 /usr/libexec/ibus-x11
+   1976 ?        S      0:00 /usr/bin/VBoxClient --seamless
+   1978 ?        Sl     0:04 /usr/bin/VBoxClient --seamless
+   1981 ?        S      0:00 /usr/bin/VBoxClient --draganddrop
+   1982 ?        Sl     0:14 /usr/bin/VBoxClient --draganddrop
+   1990 ?        S      0:00 /usr/bin/VBoxClient --vmsvga-session
+   1994 ?        Sl     0:00 /usr/bin/VBoxClient --vmsvga-session
+   2046 ?        Ssl    0:00 /usr/libexec/gvfsd-metadata
+   2964 ?        Sl     0:00 update-notifier
+   3260 ?        Sl     0:00 /usr/bin/snap userd
+   5179 ?        Sl     0:24 /usr/bin/python3 /usr/bin/x-terminal-emulator --working-directory=/home/cristinagheorghe/Desktop
+   5199 pts/0    Ss     0:00 /bin/bash
+   5244 ?        S      0:00 /usr/bin/ssh-agent -D -a /run/user/1001/keyring/.ssh
+   5824 ?        Ssl    0:00 /usr/bin/speech-dispatcher -s -t 0
+   5835 ?        Z      0:00 [sd_espeak-ng-mb] <defunct>
+   5838 ?        Sl     0:00 /usr/lib/speech-dispatcher-modules/sd_espeak-ng /etc/speech-dispatcher/modules/espeak-ng.conf
+   5871 ?        Sl     0:00 /usr/lib/speech-dispatcher-modules/sd_dummy /etc/speech-dispatcher/modules/dummy.conf
+   6039 ?        SLl    7:38 /snap/pycharm-community/355/jbr/bin/java -classpath /snap/pycharm-community/355/lib/platform-loader.jar:/snap/pycharm-
+   6178 ?        S      0:00 /snap/pycharm-community/355/bin/fsnotifier
+   6229 ?        S      0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=zygote --no-zygote-sandbox --disable-in-process-stack-traces --
+   6230 ?        S      0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=zygote --disable-in-process-stack-traces --force-device-scale-f
+   6232 ?        S      0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=zygote --disable-in-process-stack-traces --force-device-scale-f
+   6246 ?        Sl     0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=gpu-process --locales-dir-path=/snap/pycharm-community/355/jbr/
+   6269 ?        Sl     0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=
+   6328 ?        Sl     0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=utility --utility-sub-type=storage.mojom.StorageService --lang=
+   8945 ?        I      0:01 [kworker/1:0-events]
+   9332 pts/0    S+     0:00 script ceva.txt
+   9333 pts/1    Ss     0:00 bash -i
+   9650 ?        Sl     0:00 /snap/pycharm-community/355/jbr/lib/jcef_helper --type=renderer --locales-dir-path=/snap/pycharm-community/355/jbr/lib
+   9689 ?        I      0:00 [kworker/2:0-events]
+  10061 ?        I      0:00 [kworker/3:1-events]
+  10384 ?        I      0:00 [kworker/0:0-events]
+  10695 ?        I      0:00 [kworker/u8:1-events_unbound]
+  10863 ?        Sl     0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rasters
+  10918 ?        I      0:00 [kworker/u8:0-events_unbound]
+  11074 ?        I      0:00 [kworker/0:1]
+  11151 ?        I      0:00 [kworker/3:2-cgroup_destroy]
+  11153 ?        I      0:00 [kworker/2:1-rcu_gp]
+  11154 ?        I      0:00 [kworker/u8:3-events_power_efficient]
+  11155 ?        I      0:00 [kworker/1:2-events]
+  11207 ?        I      0:00 [kworker/u8:2-flush-8:0]
+  11208 ?        I      0:00 [kworker/u8:4]
+  11212 pts/1    T      0:00 ping -c 1000 google.com
+  11214 ?        I      0:00 [kworker/3:0]
+  11215 pts/1    T      0:00 sleep 100
+  11216 pts/1    R+     0:00 ps -ax
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ kill -l
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+38) SIGRTMIN+4	39) SIGRTMIN+5	40) SIGRTMIN+6	41) SIGRTMIN+7	42) SIGRTMIN+8
+43) SIGRTMIN+9	44) SIGRTMIN+10	45) SIGRTMIN+11	46) SIGRTMIN+12	47) SIGRTMIN+13
+48) SIGRTMIN+14	49) SIGRTMIN+15	50) SIGRTMAX-14	51) SIGRTMAX-13	52) SIGRTMAX-12
+53) SIGRTMAX-11	54) SIGRTMAX-10	55) SIGRTMAX-9	56) SIGRTMAX-8	57) SIGRTMAX-7
+58) SIGRTMAX-6	59) SIGRTMAX-5	60) SIGRTMAX-4	61) SIGRTMAX-3	62) SIGRTMAX-2
+63) SIGRTMAX-1	64) SIGRTMAX
+
+cristinagheorghe@Ubuntu22:~/Desktop$ sleep 900 &
+[3] 11255
+cristinagheorghe@Ubuntu22:~/Desktop$ jobs
+[1]-  Stopped                 ping -c 1000 google.com
+[2]+  Stopped                 sleep 100
+[3]   Running                 sleep 900 &
+cristinagheorghe@Ubuntu22:~/Desktop$ ps
+    PID TTY          TIME CMD
+   9333 pts/1    00:00:00 bash
+  11212 pts/1    00:00:00 ping
+  11215 pts/1    00:00:00 sleep
+  11255 pts/1    00:00:00 sleep
+  11256 pts/1    00:00:00 ps
+cristinagheorghe@Ubuntu22:~/Desktop$ kill -19 11215
+cristinagheorghe@Ubuntu22:~/Desktop$ ps
+    PID TTY          TIME CMD
+   9333 pts/1    00:00:00 bash
+  11212 pts/1    00:00:00 ping
+  11215 pts/1    00:00:00 sleep
+  11255 pts/1    00:00:00 sleep
+  11257 pts/1    00:00:00 ps
+cristinagheorghe@Ubuntu22:~/Desktop$ kill -9 11215
+cristinagheorghe@Ubuntu22:~/Desktop$ ps
+    PID TTY          TIME CMD
+   9333 pts/1    00:00:00 bash
+  11212 pts/1    00:00:00 ping
+  11255 pts/1    00:00:00 sleep
+  11258 pts/1    00:00:00 ps
+[2]+  Killed                  sleep 100
+
+cristinagheorghe@Ubuntu22:~/Desktop$ kill -9 11212
+cristinagheorghe@Ubuntu22:~/Desktop$ jobs
+[1]+  Killed                  ping -c 1000 google.com
+
+cristinagheorghe@Ubuntu22:~/Desktop$ xeyes &
+[1] 11283
+cristinagheorghe@Ubuntu22:~/Desktop$ killall xeyes
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ xeyes &
+[2] 11302
+[1]   Terminated              xeyes
+cristinagheorghe@Ubuntu22:~/Desktop$ killall -v -15 xeyes
+Killed xeyes(11302) with signal 15
+[2]+  Terminated              xeyes
+cristinagheorghe@Ubuntu22:~/Desktop$ ps
+    PID TTY          TIME CMD
+   9333 pts/1    00:00:00 bash
+  11304 pts/1    00:00:00 ps
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ps -u cristinagheorghe | grep firefox
+  11308 ?        00:00:09 firefox
+cristinagheorghe@Ubuntu22:~/Desktop$ killall -15 -u cristinagheorghe firefox
+cristinagheorghe@Ubuntu22:~/Desktop$ ps -u cristinagheorghe | grep firefox
