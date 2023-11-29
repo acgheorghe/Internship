@@ -1,10 +1,19 @@
+!!Toate aliasurile se pot vedea cu comanda: alias -p
 Alias-uri deja existente in fisierul .bashrc
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+
+Alias-uri utile:
+
+alias c='clear'
+alias instalare='sudo apt install $1'
+alias dezinstalare='sudo apt remove $1'
+alias untar='tar -zxvf $1'
+alias fh='find . -name '

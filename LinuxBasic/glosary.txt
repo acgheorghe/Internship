@@ -19,7 +19,7 @@ etc. )
 
 4. su
 Switch User - schimba userul (default cu root)
-! E nevoie de logarea ca root prin "su" pt a putea intra in directorul root (cd root).
+E nevoie de logarea ca root prin "su" pt a putea intra in directorul root (cd root).
 
 5. sudo
 Super User Do - pt a rula comenzi ca root
@@ -78,8 +78,6 @@ Se foloseste cu o comanda (ex: man ls) si vedem "manualul de utilizare" al comen
 Cron Table - comanda care e folosita pt a accesa un cron table. Cron table = lista de comenzi care
 vor fi rulate la un anumit moment specificat (scheduling tasks)
 
-(Logurile de la cron table se pot gasi in /var/log/cron )
-
 17. ifconfig
 Fara argumente, comanda afiseaza statusul interfetelor active la momentul curent (cu -a afiseaza
 inclusiv interfetele care sunt down; cu -s se afiseaza un rezumat; cu -v se afiseaza informatii
@@ -105,6 +103,21 @@ unde PID este process id-ul al procesului pe care vrem sa il oprim
 22. grep
 Cauta un anumit regular expression sau un sir de caractere intr-un fisier text.
 
+23. awk
+E un limbaj de programare (scripting). Se poate folosi pentru a face filtrari dupa anumite pattern-uri, cautand intr-unul sau in mai multe
+fisiere pentru a vedea daca exista potriviri intre liniile acestora si respectivul pattern, urmand ca apoi sa efectueze si anumite procesari
+specificate.
 
+24. systemctl start / systemctl stop
+!Doar cu drepturi de sudo. Pentru a porni/opri un serviciu systemd.
+Pentru a da reload sau restart unui serviciu : sudo systemctl reload-or-restart / sudo systemctl reload / sudo systemctl restart
 
+25. sudo systemctl enable
+SE foloseste pentru a face systemd sa porneasca respectivul serviciu la bootare. Opus: sudo systemctl disable.
 
+26. curl
+Realizeaza transferul de date prin protocoale de tipul HTTP, HTTPS, FTP etc. Se foloseste pentru a descarca continutul de la o adresa URL
+
+27. tail
+Returneza ultimele 10 linii dintr-un fisier. E utila cand vrem sa vedem date in real time pt anumite fisiere de tip log (la care se adauga noi linii).
+Pt asta se foloseste optiunea -f (follow) care "urmareste" modificarile din fisier

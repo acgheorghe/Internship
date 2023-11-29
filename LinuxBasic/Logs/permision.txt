@@ -1,0 +1,24 @@
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod 644 output.txt
+[sudo] password for cristinagheorghe:
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rw-r--r-- 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod 664 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod +x output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rwxrwxr-x 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod -r output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+--wx-wx--x 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod +r output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rwxrwxr-x 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod o-x output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rwxrwxr-- 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod g-x output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l output.txt
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 14 nov 29 11:10 output.txt

@@ -1,0 +1,51 @@
+Optiune fara grep/awk si sed:
+
+cristinagheorghe@Ubuntu22:~/Desktop$ echo "hello world!" > output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ cat output.txt
+hello world!
+
+
+Creare cu echo si citire cu grep:
+
+cristinagheorghe@Ubuntu22:~/Desktop$ grep "world" output.txt
+hello world!
+cristinagheorghe@Ubuntu22:~/Desktop$ grep "hello" output.txt
+hello world!
+cristinagheorghe@Ubuntu22:~/Desktop$ grep "hello world!" output.txt
+hello world!
+
+
+Creare cu echo si citire cu awk:
+
+cristinagheorghe@Ubuntu22:~/Desktop$ echo "hello world!" > output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ awk '{print $2}' output.txt
+world!
+cristinagheorghe@Ubuntu22:~/Desktop$ awk '{print $1}' output.txt
+hello
+cristinagheorghe@Ubuntu22:~/Desktop$ awk '{print}' output.txt
+hello world!
+cristinagheorghe@Ubuntu22:~/Desktop$ awk '/hello/' output.txt
+hello world!
+cristinagheorghe@Ubuntu22:~/Desktop$ awk '/world/' output.txt
+hello world!
+
+Primele doua comenzi cu awk citest doar al doilea, respectiv primul cuvant din fiecare linie a fisierului.
+
+
+Daca fisierul deja exista si vrem sa suprascriem fisierul cu sid:
+
+cristinagheorghe@Ubuntu22:~/Desktop$ echo "hello world!" > output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ cat output.txt
+hello world!
+cristinagheorghe@Ubuntu22:~/Desktop$ sed -i 's/.*/Hello world!!/' output.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ cat output.txt
+Hello world!!
+cristinagheorghe@Ubuntu22:~/Desktop$ grep -i "hello" output.txt
+Hello world!!
+
+
+Putem si sa cream fisiserul daca el nu exista si sa il suprascriem cu sed
+cristinagheorghe@Ubuntu22:~/Desktop$ echo "Hello world!" > output2.txt | sed -i 's/.*/Hello world!/' output2.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ cat output2.txt
+Hello world!
+
