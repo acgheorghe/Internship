@@ -1,0 +1,27 @@
+Am generat ssh key-ul pe Linux in momentul in care am facut setup-ul pt git. (cu comanda ssh-keygen -t rsa). Aceasta se afla in locatia
+~/.ssh
+
+cristinagheorghe@Ubuntu22:~/Desktop$ cd ~/.ssh
+cristinagheorghe@Ubuntu22:~/.ssh$ ls
+id_rsa  id_rsa.pub  known_hosts  known_hosts.old
+cristinagheorghe@Ubuntu22:~/.ssh$ cat id_rsa.pub
+(aici se afiseaza cheia respectiva)
+
+cristinagheorghe@Ubuntu22:~$ mv ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+
+cristinagheorghe@Ubuntu22:~$ sudo chmod 700 ~/.ssh
+cristinagheorghe@Ubuntu22:~$ sudo chmod 600 ~/.ssh/authorized_keys
+cristinagheorghe@Ubuntu22:~$ sudo apt-get install putty-tools
+cristinagheorghe@Ubuntu22:~$ puttygen ~/.ssh/id_rsa -o id_rsa.ppk
+
+
+Pentru a incerca stabilirea unei conexiuni intre Linux-Windows (nereusita)
+cristinagheorghe@Ubuntu22:~$ putty
+
+(putty:21411): Gtk-CRITICAL **: 16:13:47.033: gtk_box_gadget_distribute: assertion 'size >= 0' failed in GtkScrollbar
+
+(putty:21411): Gtk-CRITICAL **: 16:13:47.034: gtk_box_gadget_distribute: assertion 'size >= 0' failed in GtkScrollbar
+
+(putty:21411): Gtk-CRITICAL **: 16:13:47.036: gtk_box_gadget_distribute: assertion 'size >= 0' failed in GtkScrollbar
+
+
