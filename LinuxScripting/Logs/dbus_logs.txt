@@ -1,0 +1,260 @@
+cristinagheorghe@Ubuntu22:~/Desktop$ dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower/devices/battery_BAT0 org.freedesktop.DBus.Properties.GetAll string:org.freedesktop.UPower.Device
+method return time=1702277352.020413 sender=:1.45 -> destination=:1.97 serial=36 reply_serial=2
+   array [
+      dict entry(
+         string "NativePath"
+         variant             string "BAT0"
+      )
+      dict entry(
+         string "Vendor"
+         variant             string "innotek"
+      )
+      dict entry(
+         string "Model"
+         variant             string "1"
+      )
+      dict entry(
+         string "Serial"
+         variant             string "0"
+      )
+      dict entry(
+         string "UpdateTime"
+         variant             uint64 1702277257
+      )
+      dict entry(
+         string "Type"
+         variant             uint32 2
+      )
+      dict entry(
+         string "PowerSupply"
+         variant             boolean true
+      )
+      dict entry(
+         string "HasHistory"
+         variant             boolean true
+      )
+      dict entry(
+         string "HasStatistics"
+         variant             boolean true
+      )
+      dict entry(
+         string "Online"
+         variant             boolean false
+      )
+      dict entry(
+         string "Energy"
+         variant             double 43.5
+      )
+      dict entry(
+         string "EnergyEmpty"
+         variant             double 0
+      )
+      dict entry(
+         string "EnergyFull"
+         variant             double 50
+      )
+      dict entry(
+         string "EnergyFullDesign"
+         variant             double 50
+      )
+      dict entry(
+         string "EnergyRate"
+         variant             double 0
+      )
+      dict entry(
+         string "Voltage"
+         variant             double 10
+      )
+      dict entry(
+         string "ChargeCycles"
+         variant             int32 -1
+      )
+      dict entry(
+         string "Luminosity"
+         variant             double 0
+      )
+      dict entry(
+         string "TimeToEmpty"
+         variant             int64 0
+      )
+      dict entry(
+         string "TimeToFull"
+         variant             int64 0
+      )
+      dict entry(
+         string "Percentage"
+         variant             double 87
+      )
+      dict entry(
+         string "Temperature"
+         variant             double 0
+      )
+      dict entry(
+         string "IsPresent"
+         variant             boolean true
+      )
+      dict entry(
+         string "State"
+         variant             uint32 1
+      )
+      dict entry(
+         string "IsRechargeable"
+         variant             boolean true
+      )
+      dict entry(
+         string "Capacity"
+         variant             double 100
+      )
+      dict entry(
+         string "Technology"
+         variant             uint32 0
+      )
+      dict entry(
+         string "WarningLevel"
+         variant             uint32 1
+      )
+      dict entry(
+         string "BatteryLevel"
+         variant             uint32 1
+      )
+      dict entry(
+         string "IconName"
+         variant             string "battery-full-charging-symbolic"
+      )
+   ]
+
+cristinagheorghe@Ubuntu22:~/Desktop$ dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower/devices/battery_BAT0 org.freedesktop.DBus.Properties.GetAll string:org.freedesktop.UPower.Device
+method return time=1702277568.701459 sender=:1.45 -> destination=:1.100 serial=42 reply_serial=2
+   array [
+      dict entry(
+         string "NativePath"
+         variant             string "BAT0"
+      )
+      dict entry(
+         string "Vendor"
+         variant             string "innotek"
+      )
+      dict entry(
+         string "Model"
+         variant             string "1"
+      )
+      dict entry(
+         string "Serial"
+         variant             string "0"
+      )
+      dict entry(
+         string "UpdateTime"
+         variant             uint64 1702277497
+      )
+      dict entry(
+         string "Type"
+         variant             uint32 2
+      )
+      dict entry(
+         string "PowerSupply"
+         variant             boolean true
+      )
+      dict entry(
+         string "HasHistory"
+         variant             boolean true
+      )
+      dict entry(
+         string "HasStatistics"
+         variant             boolean true
+      )
+      dict entry(
+         string "Online"
+         variant             boolean false
+      )
+      dict entry(
+         string "Energy"
+         variant             double 43.5
+      )
+      dict entry(
+         string "EnergyEmpty"
+         variant             double 0
+      )
+      dict entry(
+         string "EnergyFull"
+         variant             double 50
+      )
+      dict entry(
+         string "EnergyFullDesign"
+         variant             double 50
+      )
+      dict entry(
+         string "EnergyRate"
+         variant             double 4.40724
+      )
+      dict entry(
+         string "Voltage"
+         variant             double 10
+      )
+      dict entry(
+         string "ChargeCycles"
+         variant             int32 -1
+      )
+      dict entry(
+         string "Luminosity"
+         variant             double 0
+      )
+      dict entry(
+         string "TimeToEmpty"
+         variant             int64 35532
+      )
+      dict entry(
+         string "TimeToFull"
+         variant             int64 0
+      )
+      dict entry(
+         string "Percentage"
+         variant             double 87
+      )
+      dict entry(
+         string "Temperature"
+         variant             double 0
+      )
+      dict entry(
+         string "IsPresent"
+         variant             boolean true
+      )
+      dict entry(
+         string "State"
+         variant             uint32 2
+      )
+      dict entry(
+         string "IsRechargeable"
+         variant             boolean true
+      )
+      dict entry(
+         string "Capacity"
+         variant             double 100
+      )
+      dict entry(
+         string "Technology"
+         variant             uint32 0
+      )
+      dict entry(
+         string "WarningLevel"
+         variant             uint32 1
+      )
+      dict entry(
+         string "BatteryLevel"
+         variant             uint32 1
+      )
+      dict entry(
+         string "IconName"
+         variant             string "battery-full-symbolic"
+      )
+   ]
+
+cristinagheorghe@Ubuntu22:~/Desktop$ dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower/devices/battery_BAT0 org.freedesktop.DBus.Properties.Get string:org.freedesktop.UPower.Device string:State
+method return time=1702281517.647698 sender=:1.45 -> destination=:1.166 serial=154 reply_serial=2
+   variant       uint32 2
+cristinagheorghe@Ubuntu22:~/Desktop$ dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower/devices/battery_BAT0 org.freedesktop.DBus.Properties.Get string:org.freedesktop.UPower.Device string:State | grep variant
+   variant       uint32 2
+cristinagheorghe@Ubuntu22:~/Desktop$ ./dbus.sh
+This machine is currently using battery!
+cristinagheorghe@Ubuntu22:~/Desktop$ ./dbus.sh
+This machine is currently charging!
+

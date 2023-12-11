@@ -1,0 +1,50 @@
+!!! Prima varianta scrisa special pt acel string si acel fisier
+
+cristinagheorghe@Ubuntu22:~/Desktop$ touch counter.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod u+x counter.sh
+[sudo] password for cristinagheorghe:
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l counter.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 0 dec  7 12:44 counter.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ nano counter.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat counter.sh
+#!/bin/bash
+
+file_path="$HOME/Downloads/bashcrc"
+
+if [ -e "$file_path" ]; then
+
+	counter=$(grep -o "StrictHostKeyChecking" "$file_path" | wc -l)
+	echo "Occurrences: $counter"
+else
+	echo "File not found"
+
+fi
+cristinagheorghe@Ubuntu22:~/Desktop$ ./counter.sh
+Occurrences: 4
+
+
+
+!!!Varianta la general si cea din fisierul counter.sh
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano counter.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat counter.sh
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+        echo "Usage: $0 <search_string> <filename>"
+	exit 1
+fi
+
+search_string="$1"
+filename="$2"
+
+if [ ! -f "$filename" ]; then
+	echo "Error: File '$filename' not found."
+	exit 1
+fi
+
+count=$(grep -o "$search_string" "$filename" | wc -l)
+
+echo "The string '$search_string' occurs '$count' times in the file $filename "
+cristinagheorghe@Ubuntu22:~/Desktop$ ./counter.sh "StrictHostKeyChecking" ~/Downloads/bashcrc
+The string 'StrictHostKeyChecking' occurs '4' times in the file /home/cristinagheorghe/Downloads/bashcrc

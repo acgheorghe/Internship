@@ -1,0 +1,37 @@
+cristinagheorghe@Ubuntu22:~/Desktop$ nano counter_v2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat counter_v2.sh
+#!/bin/bash
+
+if [ "$#" -lt 2 ]; then
+	echo "Usage: $0 <search_string> <filename1> [<filename2 ...]"
+	exit 1
+fi
+
+search_string="$1"
+shift
+
+for file in "$@"; do
+	if [ -f "$file" ]; then
+		echo "Occurrences of '$search_string' in '$file':"
+		grep -n "$search_string" "$file" | while IFS=: read -r line_number content; do
+			echo "Line '$line_number': '$content'"
+		done
+	else
+		echo "Error: File '$file' not found."
+	fi
+done
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al counter_v2.sh
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 421 dec  7 13:31 counter_v2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ chmod u+x counter_v2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al counter_v2.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 421 dec  7 13:31 counter_v2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./counter_v2.sh "StrictHostKeyChecking" ~/Downloads/bashcrc ~/Downloads/bashcrc.txt
+Occurrences of 'StrictHostKeyChecking' in '/home/cristinagheorghe/Downloads/bashcrc':
+Line '145': '#alias ivcssh='sshpass -p JBm59DbAAzP6Vfpm ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"  root@192.168.33.3''
+Line '146': '#alias ivc='sshpass -p JBm59DbAAzP6Vfpm ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"  root@172.17.0.1''
+Line '149': 'alias ivcssh='sshpass -p oelinux123 ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"  root@192.168.33.3''
+Line '150': 'alias ivc='sshpass -p oelinux123 ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"  root@172.17.0.1''
+Occurrences of 'StrictHostKeyChecking' in '/home/cristinagheorghe/Downloads/bashcrc.txt':
+Line '5': 'dnzjnjnvjzdnhgb 546&*^&% StrictHostKeyChecking &)^%*)(*)^'
+Line '17': '2345878044^%^&&*5StrictHostKeyChecking^%$$#$^'

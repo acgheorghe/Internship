@@ -1,0 +1,981 @@
+cristinagheorghe@Ubuntu22:~/Desktop$ touch myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+
+    echo Hello World!
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 44 dec  5 12:38 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod u+x myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 44 dec  5 12:38 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Hello World!
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # A simple copy script
+    cp $1 $2
+    # Let's verify the copy worked
+    echo Details for $2
+    ls -lh $2
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 130 dec  5 12:51 myscript.sh
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh ./output.txt ceva/output1.txt
+Details for ceva/output1.txt
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 14 dec  5 12:56 ceva/output1.txt
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ touch simplevariables.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ nano simplevariables.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat simplevariables.sh
+
+    #!/bin/bash
+    # A simple variable example
+    myvariable=Hello
+    anothervar=Fred
+    echo $myvariable $anothervar
+    echo
+    sampledir=/etc
+    ls $sampledir
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l simplevariables.sh
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 169 dec  5 13:04 simplevariables.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod u+x simplevariables.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l simplevariables.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 169 dec  5 13:04 simplevariables.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./simplevariables.sh
+Hello Fred
+
+acpi			       hostname		    ppp
+adduser.conf		       hosts		    printcap
+alsa			       hosts.allow	    profile
+alternatives		       hosts.deny	    profile.d
+anacrontab		       hp		    protocols
+apache2			       ifplugd		    pulse
+apg.conf		       ImageMagick-6	    python2.7
+apm			       init		    python3
+apparmor		       init.d		    python3.10
+apparmor.d		       initramfs-tools	    python3.12
+apport			       inputrc		    rc0.d
+appstream.conf		       insserv.conf.d	    rc1.d
+apt			       ipp-usb		    rc2.d
+avahi			       iproute2		    rc3.d
+bash.bashrc		       issue		    rc4.d
+bash_completion		       issue.net	    rc5.d
+bash_completion.d	       kernel		    rc6.d
+bindresvport.blacklist	       kernel-img.conf	    rcS.d
+binfmt.d		       kerneloops.conf	    resolv.conf
+bluetooth		       ldap		    rmt
+brlapi.key		       ld.so.cache	    rpc
+brltty			       ld.so.conf	    rsyslog.conf
+brltty.conf		       ld.so.conf.d	    rsyslog.d
+ca-certificates		       legal		    rygel.conf
+ca-certificates.conf	       libao.conf	    sane.d
+ca-certificates.conf.dpkg-old  libaudit.conf	    security
+chatscripts		       libblockdev	    selinux
+console-setup		       libnl-3		    sensors3.conf
+cracklib		       libpaper.d	    sensors.d
+cron.d			       libreoffice	    services
+cron.daily		       lighttpd		    sgml
+cron.hourly		       locale.alias	    shadow
+cron.monthly		       locale.gen	    shadow-
+crontab			       localtime	    shells
+cron.weekly		       logcheck		    skel
+cups			       login.defs	    snmp
+cupshelpers		       logrotate.conf	    speech-dispatcher
+dbus-1			       logrotate.d	    ssh
+dconf			       lsb-release	    ssl
+debconf.conf		       machine-id	    subgid
+debian_version		       magic		    subgid-
+default			       magic.mime	    subuid
+deluser.conf		       mailcap		    subuid-
+depmod.d		       mailcap.order	    sudo.conf
+dhcp			       manpath.config	    sudoers
+dictionaries-common	       mime.types	    sudoers.d
+dpkg			       mke2fs.conf	    sudo_logsrvd.conf
+e2scrub.conf		       ModemManager	    sysctl.conf
+emacs			       modprobe.d	    sysctl.d
+environment		       modules		    systemd
+environment.d		       modules-load.d	    terminfo
+ethertypes		       mtab		    thermald
+firefox			       nanorc		    thunderbird
+fonts			       netconfig	    timezone
+fprintd.conf		       netplan		    tmpfiles.d
+fstab			       network		    ubuntu-advantage
+fuse.conf		       networkd-dispatcher  ucf.conf
+fwupd			       NetworkManager	    udev
+gai.conf		       networks		    udisks2
+gdb			       newt		    ufw
+gdm3			       nftables.conf	    update-manager
+geoclue			       nsswitch.conf	    update-motd.d
+ghostscript		       openvpn		    update-notifier
+glvnd			       opt		    UPower
+gnome			       os-release	    usb_modeswitch.conf
+groff			       PackageKit	    usb_modeswitch.d
+group			       pam.conf		    vim
+group-			       pam.d		    vmware-tools
+grub.d			       papersize	    vtrgb
+gshadow			       passwd		    vulkan
+gshadow-		       passwd-		    wgetrc
+gss			       pcmcia		    wpa_supplicant
+gtk-2.0			       perl		    X11
+gtk-3.0			       pki		    xattr.conf
+hdparm.conf		       pm		    xdg
+host.conf		       pnm2ppa.conf	    xml
+hostid			       polkit-1		    zsh_command_not_found
+
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ myvar='Hello World'
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $myvar
+Hello World
+cristinagheorghe@Ubuntu22:~/Desktop$ newvar="ceva si $myvar"
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $newvar
+ceva si Hello World
+cristinagheorghe@Ubuntu22:~/Desktop$ newvar='ceva si $myvar'
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $newvar
+ceva si $myvar
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ myvar=$( ls /etc | wc -l )
+cristinagheorghe@Ubuntu22:~/Desktop$ echo There are $myvar entries in the directory /etc
+There are 231 entries in the directory /etc
+cristinagheorghe@Ubuntu22:~/Desktop$ ls
+ceva            environments  Internship   output2.txt  simplevariables.sh
+de_tinut_minte  exercise.txt  myscript.sh  output.txt   test
+cristinagheorghe@Ubuntu22:~/Desktop$ myvar=$( ls )
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $myvar
+ceva de_tinut_minte environments exercise.txt Internship myscript.sh output2.txt output.txt simplevariables.sh test
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+
+   #!/bin/bash
+    # demonstrate variable scope 1.
+    var1=blah
+    var2=foo
+    # Let's verify their current value
+    echo $0 :: var1 : $var1, var2 : $var2
+    export var1
+    ./myscript2.sh
+    # Let's see what they are now
+    echo $0 :: var1 : $var1, var2 : $var2
+
+cristinagheorghe@Ubuntu22:~/Desktop$ touch myscript2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript2.sh
+#!/bin/bash
+# demonstrate variable scope 2
+# Let's verify their current value
+echo $0 :: var1 : $var1, var2 : $var2
+# Let's change their values
+var1=flop
+var2=bleh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript2.sh
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 164 dec  5 13:15 myscript2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod u+x myscript2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript2.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 164 dec  5 13:15 myscript2.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 271 dec  5 13:14 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+./myscript.sh :: var1 : blah, var2 : foo
+./myscript2.sh :: var1 : blah, var2 :
+./myscript.sh :: var1 : blah, var2 : foo
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ touch exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ nano exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l exercise.sh
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 100 dec  6 12:16 exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ sudo chmod u+x exercise.sh
+[sudo] password for cristinagheorghe:
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l exercise.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 100 dec  6 12:16 exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh 'Hello' 23
+Details about your input
+The first argument was Hello and the second one was 23
+cristinagheorghe@Ubuntu22:~/Desktop$ cat exercise.sh
+#!/bin/bash
+
+echo Details about your input
+echo The first argument was $1 and the second one was $2
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l /usr/share/dict
+total 2408
+-rw-r--r-- 1 root root 985084 ian 20  2022 american-english
+-rw-r--r-- 1 root root 977195 ian 20  2022 british-english
+-rw-r--r-- 1 root root 492822 mar 17  2022 cracklib-small
+-rw-r--r-- 1 root root    199 dec  2  2021 README.select-wordlist
+lrwxrwxrwx 1 root root     30 nov 22 14:55 words -> /etc/dictionaries-common/words
+lrwxrwxrwx 1 root root     16 nov 22 14:55 words.pre-dictionaries-common -> american-english
+cristinagheorghe@Ubuntu22:~/Desktop$ nano exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l exercise.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 137 dec  6 12:24 exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat exercise.sh
+#!/bin/bash
+
+word_file_path="/usr/share/dict/words"
+
+random_word=$(shuf "$word_file_path" | head -n 1)
+
+echo "Random word: $random_word"
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh
+Random word: alcoves
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh
+Random word: justifying
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh
+Random word: ACTH
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano exercise.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat exercise.sh
+#!/bin/bash
+
+word_file_path="/usr/share/dict/words"
+
+# verificam daca avem un argument si daca da, vedem daca e numar
+if [ $# -eq 1 ]
+then
+	word_length=$1
+	echo "Selecting a random word with $word_length characters!"
+
+	random_word=$(shuf "$word_file_path" | grep -E "^.{$word_length}$" | head -n 1)
+else
+
+	echo "Selecting a random word from the file!"
+	random_word=$(shuf "$word_file_path" | head -n 1)
+fi
+
+echo "Random word: $random_word"
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh 5
+Selecting a random word with 5 characters!
+Random word: rates
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh 4
+Selecting a random word with 4 characters!
+Random word: sari
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh 4
+Selecting a random word with 4 characters!
+Random word: door
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./exercise.sh
+Selecting a random word from the file!
+Random word: elitism's
+
+
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Ask the user for their name
+    echo Hello, who am I talking to?
+    read varname
+    echo It\'s nice to meet you $varname
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 146 dec  5 13:25 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Hello, who am I talking to?
+Cristina
+It's nice to meet you Cristina
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 188 dec  6 14:35 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Username: cristina
+Password:
+Thankyou cristina we now have your login details
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Ask the user for login details
+    read -p 'Username: ' uservar
+    read -sp 'Password: ' passvar
+    echo
+    echo Thankyou $uservar we now have your login details
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Demonstrate how read actually works
+    echo What cars do you like?
+    read car1 car2 car3
+    echo Your first car was: $car1
+    echo Your second car was: $car2
+    echo Your third car was: $car3
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 221 dec  6 14:37 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+What cars do you like?
+BMW Maserati Bentley
+Your first car was: BMW
+Your second car was: Maserati
+Your third car was: Bentley
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+What cars do you like?
+aa bb cc dd
+Your first car was: aa
+Your second car was: bb
+Your third car was: cc dd
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+#!/bin/bash
+# A basic summary of my sales report
+echo Here is a summary of the sales data:
+echo ====================================
+echo
+cat /dev/stdin | cut -d' ' -f 2,3 | sort
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 179 dec  6 14:41 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ nano salesdata.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ cat salesdata.txt
+Fred apples 20 December 4
+Susy oranges 5 December 7
+Mark watermelons 12 December 10
+Terry peaches 7 December 15
+cristinagheorghe@Ubuntu22:~/Desktop$ cat salesdata.txt | ./myscript.sh
+Here is a summary of the sales data:
+====================================
+
+apples 20
+oranges 5
+peaches 7
+watermelons 12
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic arithmetic using let
+    let a=5+4
+    echo $a # 9
+    let "a = 5 + 4"
+    echo $a # 9
+    let a++
+    echo $a # 10
+    let "a = 4 * 5"
+    echo $a # 20
+    let "a = $1 + 30"
+    echo $a # 30 + first command line argument
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 251 dec  6 14:45 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 15
+9
+9
+10
+20
+45
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic arithmetic using expr
+    expr 5 + 4
+    expr "5 + 4"
+    expr 5+4
+    expr 5 \* $1
+    expr 11 % 2
+    a=$( expr 10 - 3 )
+    echo $a # 7
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 168 dec  6 14:47 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 12
+9
+5 + 4
+5+4
+60
+1
+7
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic arithmetic using double parentheses
+    a=$(( 4 + 5 ))
+    echo $a # 9
+    a=$((3+5))
+    echo $a # 8
+    b=$(( a + 3 ))
+    echo $b # 11
+    b=$(( $a + 4 ))
+    echo $b # 12
+    (( b++ ))
+    echo $b # 13
+    (( b += 3 ))
+    echo $b # 16
+    a=$(( 4 * 5 ))
+    echo $a # 20
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 305 dec  6 14:49 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+9
+8
+11
+12
+13
+16
+20
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Show the length of a variable.
+    a='Hello World'
+    echo ${#a} # 11
+    b=4953
+    echo ${#b} # 4
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+11
+4
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic if statement
+    if [ $1 -gt 100 ]
+    then
+    echo Hey that\'s a large number.
+    pwd
+    fi
+    date
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 134 dec  6 14:53 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 15
+miercuri 6 decembrie 2023, 14:53:34 +0200
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 1500
+Hey that's a large number.
+/home/cristinagheorghe/Desktop
+miercuri 6 decembrie 2023, 14:53:39 +0200
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ test 001 = 1
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $?
+1
+cristinagheorghe@Ubuntu22:~/Desktop$ test 001 -eq 1
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $?
+0
+cristinagheorghe@Ubuntu22:~/Desktop$ touch myfile
+cristinagheorghe@Ubuntu22:~/Desktop$ test -s myfile
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $?
+1
+cristinagheorghe@Ubuntu22:~/Desktop$ ls /etc > myfile
+cristinagheorghe@Ubuntu22:~/Desktop$ test -s myfile
+cristinagheorghe@Ubuntu22:~/Desktop$ echo $?
+0
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -l myscript.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe 197 dec  7 11:21 myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Nested if statements
+    if [ $1 -gt 100 ]
+    then
+    echo Hey that\'s a large number.
+    if (( $1 % 2 == 0 ))
+    then
+    echo And is also an even number.
+    fi
+    fi
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 2300
+Hey that's a large number.
+And is also an even number.
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # elif statements
+    if [ $1 -ge 18 ]
+    then
+    echo You may go to the party.
+    elif [[ "$2" == "yes" ]]
+    then
+    echo You may go to the party but be back before midnight.
+    else
+    echo You may not go to the party.
+    fi
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 16
+You may not go to the party.
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 16 "yes"
+You may go to the party but be back before midnight.
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 23
+You may go to the party.
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # and example
+    if [ -r $1 ] && [ -s $1 ]
+    then
+    echo This file is useful.
+    fi
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh output2.txt
+This file is useful.
+cristinagheorghe@Ubuntu22:~/Desktop$ cat output2.txt
+Hello world!
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # or example
+    if [ $USER == 'cristinagheorghe' ] || [ $USER == 'cristina' ]
+    then
+    ls -alh
+    else
+    ls
+    fi
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+total 468K
+drwxr-xr-x  6 cristinagheorghe cristinagheorghe 4,0K dec  7 11:36 .
+drwxr-x--- 20 cristinagheorghe cristinagheorghe 4,0K dec  7 11:17 ..
+drwxrwxr-x  2 cristinagheorghe cristinagheorghe 4,0K dec  5 12:55 ceva
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe  455 nov 23 16:05 de_tinut_minte
+drwxrwxr-x  3 cristinagheorghe cristinagheorghe 4,0K nov 23 13:15 environments
+-rwxrw-r--  1 cristinagheorghe cristinagheorghe  440 dec  6 14:31 exercise.sh
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe 408K nov 28 12:40 exercise.txt
+drwxrwxr-x  9 cristinagheorghe cristinagheorghe 4,0K nov 29 11:32 Internship
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe 2,2K dec  7 11:19 myfile
+-rwxrw-r--  1 cristinagheorghe cristinagheorghe  164 dec  5 13:15 myscript2.sh
+-rwxrw-r--  1 cristinagheorghe cristinagheorghe  144 dec  7 11:36 myscript.sh
+-r--rw-r--  1 cristina         cristinagheorghe   13 nov 29 11:12 output2.txt
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe   14 nov 29 11:10 output.txt
+-rw-rw-r--  1 cristinagheorghe cristinagheorghe  112 dec  6 14:41 salesdata.txt
+-rwxrw-r--  1 cristinagheorghe cristinagheorghe  169 dec  5 13:04 simplevariables.sh
+drwxrwxr-x  4 cristinagheorghe cristinagheorghe 4,0K nov 23 15:53 test
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # case example
+    case $1 in
+    start)
+	    echo starting
+    ;;
+    stop)
+   	 echo stoping
+    ;;
+    restart)
+   	 echo restarting
+    ;;
+    *)
+   	 echo don\'t know
+    ;;
+    esac
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh st
+don't know
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh start
+starting
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh stop
+stoping
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Print a message about disk useage.
+    space_free=$( df -h | awk '{ print $5 }' | sort -n | tail -n 1 | sed 's/%//' )
+    case $space_free in
+    [1-5]*)
+    echo Plenty of disk space available
+    ;;
+    [6-7]*)
+    echo There could be a problem in the near future
+    ;;
+    8*)
+    echo Maybe we should look at clearing out old files
+    ;;
+    9*)
+    echo We could have a serious problem on our hands soon
+    ;;
+    *)
+    echo Something is not quite right here
+    ;;
+    esac
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+There could be a problem in the near future
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic while loop
+    counter=1
+    while [ $counter -le 10 ]
+    do
+    echo $counter
+    ((counter++))
+    done
+    echo All done
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+All done
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+All done
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic until loop
+    counter=1
+    until [ $counter -gt 10 ]
+    do
+    echo $counter
+    ((counter++))
+    done
+    echo All done
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic for loop
+    names='Stan Kyle Cartman'
+    for name in $names
+    do
+    echo $name
+    done
+    echo All done
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Stan
+Kyle
+Cartman
+All done
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic range in for loop
+    for value in {1..5}
+    do
+    echo $value
+    done
+    echo All done
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+1
+2
+3
+4
+5
+All done
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic range with steps for loop
+    for value in {10..0..2}
+    do
+    echo $value
+    done
+    echo All done
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+10
+8
+6
+4
+2
+0
+All done
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic range with alternate syntax
+    for ((num = 1; num <= 5; num++))
+    do
+    echo $num
+    done
+    echo All done
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+1
+2
+3
+4
+5
+All done
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Make a backup set of files
+    for value in $1/*
+    do
+    used=$( df $1 | tail -1 | awk '{ print $5 }' | sed 's/%//' )
+    if [ $used -gt 90 ]
+    then
+    echo Low disk space 1>&2
+    break
+    fi
+    cp $value $1/backup/
+    done
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al ceva
+total 16
+drwxrwxr-x 3 cristinagheorghe cristinagheorghe 4096 dec  7 11:54 .
+drwxr-xr-x 6 cristinagheorghe cristinagheorghe 4096 dec  7 11:53 ..
+drwxrwxr-x 2 cristinagheorghe cristinagheorghe 4096 dec  7 11:55 backup
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe   14 dec  5 12:56 output1.txt
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al ceva/backup
+total 8
+drwxrwxr-x 2 cristinagheorghe cristinagheorghe 4096 dec  7 11:55 .
+drwxrwxr-x 3 cristinagheorghe cristinagheorghe 4096 dec  7 11:54 ..
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh ceva
+cp: -r not specified; omitting directory 'ceva/backup'
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al ceva/backup
+total 12
+drwxrwxr-x 2 cristinagheorghe cristinagheorghe 4096 dec  7 11:56 .
+drwxrwxr-x 3 cristinagheorghe cristinagheorghe 4096 dec  7 11:54 ..
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe   14 dec  7 11:56 output1.txt
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Make a backup set of files
+    for value in $1/*
+    do
+    if [ ! -r $value ]
+    then
+    echo $value not readable 1>&2
+    continue
+    fi
+    cp $value $1/backup/
+    done
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh ceva
+cp: -r not specified; omitting directory 'ceva/backup'
+cristinagheorghe@Ubuntu22:~/Desktop$ ls -al ceva/backup
+total 12
+drwxrwxr-x 2 cristinagheorghe cristinagheorghe 4096 dec  7 11:56 .
+drwxrwxr-x 3 cristinagheorghe cristinagheorghe 4096 dec  7 11:54 ..
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe   14 dec  7 11:57 output1.txt
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+1) Kyle
+2) Cartman
+3) Stan
+4) Quit
+Select character: 1
+Hello Kyle
+Select character: 2
+Hello Cartman
+Select character: 3
+Hello Stan
+Select character: 4
+Bye
+
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Basic function
+    print_something () {
+    echo Hello I am a function
+    }
+    print_something
+    print_something
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Hello I am a function
+Hello I am a function
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Passing arguments to a function
+    print_something () {
+    echo Hello $1
+    }
+    print_something Mars
+    print_something Jupiter
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Hello Mars
+Hello Jupiter
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Setting a return status for a function
+    print_something () {
+    echo Hello $1
+    return 5
+    }
+    print_something Mars
+    print_something Jupiter
+    echo The previous function has a return value of $?
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Hello Mars
+Hello Jupiter
+The previous function has a return value of 5
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Setting a return value to a function
+    lines_in_file () {
+    cat $1 | wc -l
+    }
+    num_lines=$( lines_in_file $1 )
+    echo The file $1 has $num_lines lines in it.
+cristinagheorghe@Ubuntu22:~/Desktop$ cat output2.txt
+Hello world!
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh output2.txt
+The file output2.txt has 1 lines in it.
+
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Experimenting with variable scope
+    var_change () {
+    local var1='local 1'
+    echo Inside function: var1 is $var1 : var2 is $var2
+    var1='changed again'
+    var2='2 changed again'
+    }
+    var1='global 1'
+    var2='global 2'
+    echo Before function call: var1 is $var1 : var2 is $var2
+    var_change
+    echo After function call: var1 is $var1 : var2 is $var2
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+Before function call: var1 is global 1 : var2 is global 2
+Inside function: var1 is local 1 : var2 is global 2
+After function call: var1 is global 1 : var2 is 2 changed again
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Create a wrapper around the command ls
+    ls () {
+    command ls -lh
+    }
+    ls
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh
+total 460K
+drwxrwxr-x 3 cristinagheorghe cristinagheorghe 4,0K dec  7 11:54 ceva
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe  455 nov 23 16:05 de_tinut_minte
+drwxrwxr-x 3 cristinagheorghe cristinagheorghe 4,0K nov 23 13:15 environments
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe  440 dec  6 14:31 exercise.sh
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 408K nov 28 12:40 exercise.txt
+drwxrwxr-x 9 cristinagheorghe cristinagheorghe 4,0K nov 29 11:32 Internship
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe 2,2K dec  7 11:19 myfile
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe  164 dec  5 13:15 myscript2.sh
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe  106 dec  7 12:07 myscript.sh
+-r--rw-r-- 1 cristina         cristinagheorghe   13 nov 29 11:12 output2.txt
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe   14 nov 29 11:10 output.txt
+-rw-rw-r-- 1 cristinagheorghe cristinagheorghe  112 dec  6 14:41 salesdata.txt
+-rwxrw-r-- 1 cristinagheorghe cristinagheorghe  169 dec  5 13:04 simplevariables.sh
+drwxrwxr-x 4 cristinagheorghe cristinagheorghe 4,0K nov 23 15:53 test
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # Print message in center of terminal
+    cols=$( tput cols )
+    rows=$( tput lines )
+    message=$@
+    input_length=${#message}
+    half_input_length=$(( $input_length / 2 ))
+    middle_row=$(( $rows / 2 ))
+    middle_col=$(( ($cols / 2) - $half_input_length ))
+    tput clear
+    tput cup $middle_row $middle_col
+    tput bold
+    echo $@
+    tput sgr0
+    tput cup $( tput lines ) 0
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh Hello
+(rezultatul e un Hello pe mijlocul terminalului)
+
+
+cristinagheorghe@Ubuntu22:~/Desktop$ nano myscript.sh
+cristinagheorghe@Ubuntu22:~/Desktop$ cat myscript.sh
+
+    #!/bin/bash
+    # A date is the first command line argument
+    clean_date=$( echo $1 | sed 's/[ /:\^#]/-/g' )
+    echo $clean_date
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 23/07/2023
+23-07-2023
+cristinagheorghe@Ubuntu22:~/Desktop$ ./myscript.sh 23:07:2023
+23-07-2023
